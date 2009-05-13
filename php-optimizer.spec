@@ -7,11 +7,13 @@
 Summary:	PHP optimizer extension for APC
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 0.alpha1.6
+Release:	%mkrel 0.alpha2.1
 Group:		Development/PHP
 License:	BSD-Style
 URL:		http://pecl.php.net/package/%{modname}
-Source0:	http://pecl.php.net/get/%{modname}-%{version}alpha1.tgz
+#Source0:	http://pecl.php.net/get/%{modname}-%{version}alpha1.tgz
+# cvs -d :pserver:cvsread@cvs.php.net:/repository checkout pecl/optimizer optimizer
+Source0:	%{modname}.tar.gz
 Source1:	optimizer.ini
 Patch0:		optimizer-no_egg.diff
 BuildRequires:  php-devel >= 3:5.2.0
@@ -24,8 +26,15 @@ An opcode optimizer for PHP to be used with the APC opcode cache.
 
 %prep
 
-%setup -q -n %{modname}-%{version}alpha1
-[ "../package*.xml" != "/" ] && mv ../package*.xml .
+%setup -q -n %{modname}
+#[ "../package*.xml" != "/" ] && mv ../package*.xml .
+
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod 644 {} \;
+
+for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type f -name .#\*`; do
+    if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
+done
 
 %patch0 -p1
 
