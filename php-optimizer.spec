@@ -7,7 +7,7 @@
 Summary:	PHP optimizer extension for APC
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 0.alpha2.6
+Release:	%mkrel 0.alpha2.7
 Group:		Development/PHP
 License:	BSD-Style
 URL:		http://pecl.php.net/package/%{modname}
