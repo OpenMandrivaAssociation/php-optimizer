@@ -1,0 +1,35 @@
+diff -Naurp optimizer/optimize_fcr.c optimizer.oden/optimize_fcr.c
+--- optimizer/optimize_fcr.c	2009-04-30 05:32:27.000000000 +0200
++++ optimizer.oden/optimize_fcr.c	2009-05-13 15:41:17.000000000 +0200
+@@ -103,7 +103,6 @@ const fcr_func_entry fn[FN_BASIC] = {
+ 	FCR_FUNC(php_logo_guid,         PHP_LOGO_GUID,         OPTIMIZER_IS_LONG,   FN_OPTIMIZABLE_STATIC_ONLY)
+ 	FCR_FUNC(zend_logo_guid,        ZEND_LOGO_GUID,        OPTIMIZER_IS_LONG,   FN_OPTIMIZABLE_STATIC_ONLY)
+ 	FCR_FUNC(php_real_logo_guid,    PHP_REAL_LOGO_GUID,    OPTIMIZER_IS_LONG,   FN_OPTIMIZABLE_STATIC_ONLY)
+-	FCR_FUNC(php_egg_logo_guid,     PHP_EGG_LOGO_GUID,     OPTIMIZER_IS_LONG,   FN_OPTIMIZABLE_STATIC_ONLY)
+ 	FCR_FUNC(php_uname,             PHP_UNAME,             OPTIMIZER_IS_LONG,   FN_OPTIMIZABLE_STATIC_ONLY)
+ 	FCR_FUNC(php_ini_scanned_files, PHP_INI_SCANNED_FILES, OPTIMIZER_IS_STRING, FN_OPTIMIZABLE_STATIC_ONLY)
+ 	FCR_FUNC(md5,                   MD5,                   OPTIMIZER_IS_LONG | OPTIMIZER_IS_STRING, FN_OPTIMIZABLE_STATIC_ONLY)
+@@ -1238,12 +1237,6 @@ static void optimize_fcall_fcr(zend_op* 
+ 					OPTIMIZER_STATS_ADD_FCR();
+ 				}
+  				break;
+- 			case FN_PHP_EGG_LOGO_GUID: /* php_egg_logo_guid() */
+- 				if (op->extended_value == 0) {
+-					optimize_fcall_to_string(PHP_EGG_LOGO_GUID, strlen(PHP_EGG_LOGO_GUID), &prev, &op, 0, cb, Ts);
+-					OPTIMIZER_STATS_ADD_FCR();
+-				}
+- 				break;
+  			case FN_PHP_UNAME: /* php_uname() */
+  				if (op->extended_value == 0) {
+ 					char *u = php_get_uname('a');
+diff -Naurp optimizer/optimize_fcr.h optimizer.oden/optimize_fcr.h
+--- optimizer/optimize_fcr.h	2009-04-30 05:32:27.000000000 +0200
++++ optimizer.oden/optimize_fcr.h	2009-05-13 15:41:32.000000000 +0200
+@@ -46,7 +46,6 @@ PHPAPI extern char *php_ini_scanned_file
+ #define FN_PHP_LOGO_GUID          15
+ #define FN_ZEND_LOGO_GUID         16
+ #define FN_PHP_REAL_LOGO_GUID     17
+-#define FN_PHP_EGG_LOGO_GUID      18
+ #define FN_PHP_UNAME              19
+ #define FN_PHP_INI_SCANNED_FILES  20
+ #define FN_MD5                    21
