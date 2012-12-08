@@ -7,7 +7,7 @@
 Summary:	PHP optimizer extension for APC
 Name:		php-%{modname}
 Version:	0.1
-Release:	%mkrel 0.alpha2.18
+Release:	%mkrel 0.alpha2.16
 Group:		Development/PHP
 License:	BSD-Style
 URL:		http://pecl.php.net/package/%{modname}
@@ -99,3 +99,92 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_libdir}/php/extensions/optimizer.so
 %attr(0755,root,root) %{_libdir}/php/extensions/optimizer-debug.so
 
+
+
+%changelog
+* Wed Aug 24 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.16mdv2011.0
++ Revision: 696371
+- rebuilt for php-5.3.8
+
+* Fri Aug 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.15
++ Revision: 695315
+- rebuilt for php-5.3.7
+
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.14
++ Revision: 667482
+- mass rebuild
+
+* Sat Mar 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.13
++ Revision: 646555
+- rebuilt for php-5.3.6
+
+* Sat Jan 08 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.12mdv2011.0
++ Revision: 629741
+- rebuilt for php-5.3.5
+
+* Mon Jan 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.11mdv2011.0
++ Revision: 628047
+- ensure it's built without automake1.7
+
+* Tue Nov 23 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.10mdv2011.0
++ Revision: 600179
+- rebuild
+
+* Sun Oct 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.9mdv2011.0
++ Revision: 588716
+- rebuild
+
+* Fri Mar 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.8mdv2010.1
++ Revision: 514588
+- rebuilt for php-5.3.2
+
+* Mon Feb 22 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.7mdv2010.1
++ Revision: 509469
+- rebuild
+- rebuild
+
+* Sat Jan 02 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.5mdv2010.1
++ Revision: 485262
+- rebuilt for php-5.3.2RC1
+
+* Sat Nov 21 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.4mdv2010.1
++ Revision: 468089
+- rebuilt against php-5.3.1
+
+* Wed Sep 30 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.3mdv2010.0
++ Revision: 451219
+- rebuild
+
+* Sun Jul 19 2009 Raphaël Gertz <rapsys@mandriva.org> 0.1-0.alpha2.2mdv2010.0
++ Revision: 397306
+- Rebuild
+
+* Wed May 13 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha2.1mdv2010.0
++ Revision: 375444
+- use a recent cvs snapshot, but call it "alpha2" for now
+- rediffed P0
+- rebuilt against php-5.3.0RC2
+
+* Sun Mar 01 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.5mdv2009.1
++ Revision: 346524
+- rebuilt for php-5.2.9
+
+* Tue Feb 17 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.4mdv2009.1
++ Revision: 341512
+- rebuilt against php-5.2.9RC2
+
+* Wed Dec 31 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.3mdv2009.1
++ Revision: 321794
+- rebuild
+
+* Fri Dec 05 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.2mdv2009.1
++ Revision: 310221
+- rebuilt against php-5.2.7
+
+* Thu Aug 07 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.1mdv2009.0
++ Revision: 266242
+- import php-optimizer
+
+
+* Thu Aug 07 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1-0.alpha1.1mdv2009.0
+- initial Mandriva package
