@@ -10,7 +10,7 @@ Version:	0.1
 Release:	%mkrel 0.alpha2.16
 Group:		Development/PHP
 License:	BSD-Style
-URL:		http://pecl.php.net/package/%{modname}
+URL:		https://pecl.php.net/package/%{modname}
 #Source0:	http://pecl.php.net/get/%{modname}-%{version}alpha1.tgz
 # cvs -d :pserver:cvsread@cvs.php.net:/repository checkout pecl/optimizer optimizer
 Source0:	%{modname}.tar.gz
